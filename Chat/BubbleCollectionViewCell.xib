@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="U8y-a2-mU6" customClass="BubbleCollectionViewCell" customModule="Chat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emq-jz-8tg">
+                        <rect key="frame" x="8" y="0.0" width="392" height="118"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="BubbleCollectionViewCell" scrollEnabled="NO" editable="NO" text="Пример текста" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Io-tA-gzs">
+                                <rect key="frame" x="14" y="25" width="364" height="93"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGs-jU-hTV">
+                                <rect key="frame" x="18" y="8" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et8-Qt-UHE">
+                                <rect key="frame" x="374" y="8" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Et8-Qt-UHE" firstAttribute="top" secondItem="emq-jz-8tg" secondAttribute="top" constant="8" id="217-6D-WHh"/>
+                            <constraint firstItem="9Io-tA-gzs" firstAttribute="leading" secondItem="emq-jz-8tg" secondAttribute="leading" constant="14" id="FjK-qa-IXB"/>
+                            <constraint firstAttribute="trailing" secondItem="9Io-tA-gzs" secondAttribute="trailing" constant="14" id="O0A-0P-qqb"/>
+                            <constraint firstItem="9Io-tA-gzs" firstAttribute="top" secondItem="emq-jz-8tg" secondAttribute="top" constant="25" id="OrK-pc-rzS"/>
+                            <constraint firstItem="GGs-jU-hTV" firstAttribute="top" secondItem="emq-jz-8tg" secondAttribute="top" constant="8" id="PXv-Qs-8Af"/>
+                            <constraint firstItem="GGs-jU-hTV" firstAttribute="leading" secondItem="emq-jz-8tg" secondAttribute="leading" constant="18" id="VQ5-5g-A2N"/>
+                            <constraint firstAttribute="bottom" secondItem="9Io-tA-gzs" secondAttribute="bottom" id="Vd9-WE-Tlx"/>
+                            <constraint firstAttribute="trailing" secondItem="Et8-Qt-UHE" secondAttribute="trailing" constant="18" id="YK9-MA-v0v"/>
+                            <constraint firstAttribute="width" constant="392" id="tnu-LT-u1X"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="emq-jz-8tg" secondAttribute="trailing" constant="8" id="41O-Xk-fPP"/>
+                <constraint firstItem="emq-jz-8tg" firstAttribute="leading" secondItem="U8y-a2-mU6" secondAttribute="leading" constant="8" id="W7L-3W-ZJ0"/>
+                <constraint firstItem="emq-jz-8tg" firstAttribute="height" secondItem="U8y-a2-mU6" secondAttribute="height" id="apQ-hx-SIo"/>
+                <constraint firstItem="emq-jz-8tg" firstAttribute="top" secondItem="U8y-a2-mU6" secondAttribute="top" id="eFe-ms-NSA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ALf-Yg-F4d"/>
+            <size key="customSize" width="408" height="118"/>
+            <connections>
+                <outlet property="bubbleView" destination="emq-jz-8tg" id="QKL-mh-Qid"/>
+                <outlet property="dateLabel" destination="Et8-Qt-UHE" id="bCm-mu-sGf"/>
+                <outlet property="leadingConstraint" destination="W7L-3W-ZJ0" id="MNx-dw-zRv"/>
+                <outlet property="nameLabel" destination="GGs-jU-hTV" id="m7e-oK-NSF"/>
+                <outlet property="textView" destination="9Io-tA-gzs" id="kkf-1r-IsE"/>
+                <outlet property="trailingConstraint" destination="41O-Xk-fPP" id="Tby-QZ-ywZ"/>
+                <outlet property="widthConstraint" destination="tnu-LT-u1X" id="b2V-z4-mxI"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="95"/>
+        </collectionViewCell>
+    </objects>
+</document>
