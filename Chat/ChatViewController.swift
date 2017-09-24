@@ -49,7 +49,7 @@ class ChatViewController: UIViewController {
         
         // Сроллим вниз
         let indexPath = IndexPath(item: messages.count - 1, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        collectionView.scrollToItem(at: indexPath, at: .top, animated: false)
     }
     
 }
@@ -64,34 +64,28 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! BubbleCollectionViewCell
         let message = messages[indexPath.row]
-        cell.fillCell(message)
-        
-        if let frame = getEstimatedFrame(text: message.text) {
-            let width = frame.width + 40
-            cell.widthConstraint.constant = width < 250 ? 250 : width
-        }
+        cell.fillCell(message)        
         
         return cell
     }
     
-    // Получаем размер текста
-    func getEstimatedFrame(text: String?) -> CGRect? {
-        guard let text = text else {return nil}
-        let size = CGSize(width: 300, height: 1000)
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        let estimatedFrame = NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)], context: nil)
-        
-        return estimatedFrame
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var height: CGFloat = 0
         
+        var height: CGFloat = 0
         if let frame = getEstimatedFrame(text: messages[indexPath.row].text) {
             height = frame.height + 45
         }
         
         return CGSize(width: collectionView.frame.width, height: height)
-    }
+    }    
+}
+
+// Получаем размер текста
+func getEstimatedFrame(text: String?) -> CGRect? {
+    guard let text = text else {return nil}
+    let size = CGSize(width: 220, height: 1000)
+    let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+    let estimatedFrame = NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)], context: nil)
     
+    return estimatedFrame
 }

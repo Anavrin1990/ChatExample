@@ -51,5 +51,14 @@ class BubbleCollectionViewCell: UICollectionViewCell {
             bubbleView.backgroundColor = bubbleColor
         }
         
+        if let frame = getEstimatedFrame(text: message.text) {
+            let nameWidth = getEstimatedFrame(text: nameLabel.text)?.width ?? 50
+            let dateWidth = getEstimatedFrame(text: dateLabel.text)?.width ?? 50
+            let minWidth = nameWidth + dateWidth + 40
+            
+            let width = frame.width + 40
+            
+            widthConstraint.constant = width < minWidth ? minWidth : width
+        }        
     }
 }
